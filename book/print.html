@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>black magic in d</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">black magic in d</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="not-even-first-draft"><a class="header" href="#not-even-first-draft">NOT EVEN FIRST DRAFT</a></h1>
+<h3 id="about-this-book"><a class="header" href="#about-this-book">About this book</a></h3>
+<p>If this is your first book about dlang; <strong>don't</strong>. This is a collection of rants about template meta-programming. Go read something else first: //todo list</p>
+<p>Read this along side or after the template book even if its old as shit //todo link
+Making this at the earilest the 3rd book you read.</p>
+<h3 id="contributing"><a class="header" href="#contributing">Contributing</a></h3>
+<p>Im very open to grammer and spelling edits, not so with tone and opinion policing.
+Geust chapters plz.</p>
+<h3 id="me"><a class="header" href="#me">Me</a></h3>
+<p><img src="./avatar.png" alt="&quot;cearal&quot; experiments lain meme, looking like the girl in &quot;pink nightmares&quot;, linkedin &quot;open to work&quot; circle-banner added clashingly" /></p>
+<p>//todo crop</p>
+<p>Im monkyyy, the grumpy asshole whos chornicaly unempoyed and seemly unable to finish a solo project. //todo</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="thoery"><a class="header" href="#thoery">Thoery</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="whats-a-template-anyway"><a class="header" href="#whats-a-template-anyway">whats a template anyway</a></h1>
+<p>//todo make allot more verbose and clear, and get beta readers who dont understand templates</p>
+<p>In cooking theres a difference between a techique and a recipe. A "betty crocker yellow cake americain edition" reads differently from a a describtion of "stirfry". Likewise stovanov//todo spelling ranting about math is different from plain old c.</p>
+<p>//todo find video of rant</p>
+<p>Where c is very close to thin layer over a finished program and is therefore like repeating a packaged cake recipe, templates are where steponv can put his ideas a techique.</p>
+<p>You dont need to have betty crooker hold your hand to stirfry pork and leeks, it will be fine.</p>
+<p><code>template stirfry(alias Meat, Vegibles...)</code> and <code>stirfry!(pork,leek)</code>; you replace specail tokens to generate your recipe on the fly. Which is fine because <code>pork</code> and <code>beef</code> are culiarily very simuliar, handling the list of vegibles may take some getting used to, to say nothing of how to express seasoning. But all of that is possible.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bad-turing-completeness"><a class="header" href="#bad-turing-completeness">Bad turing-completeness</a></h1>
+<p>//todo rant about how "reductions" in computer science are often "expansions", a round trip conversion from sat to minesweeper will be much much larger</p>
+<p>Templates are turing complete but the string replacement that is the "reduction" between chruch and turing is a shit computer</p>
+<p><strong>syntax sugar has semantic meaning</strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="new-ish-features"><a class="header" href="#new-ish-features">New-ish features</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="alias-reassignment"><a class="header" href="#alias-reassignment">Alias reassignment</a></h1>
+<p>//todo since this was added after the template book, some coverage somewhere is nessery</p>
+<p>//todo enum reassignment pattern</p>
+<p>//todo upstream bug vs opends fix</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="opend-string-imports"><a class="header" href="#opend-string-imports">openD string imports</a></h1>
+<p>//some example code idk</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="other-patterns"><a class="header" href="#other-patterns">Other patterns</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="specailization-as-lookup-tables"><a class="header" href="#specailization-as-lookup-tables">Specailization as lookup tables</a></h1>
+<pre><code class="language-d">int foo(T:int)()=&gt;1;
+int foo(T:float)()=&gt;2;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="walters-wild-ride"><a class="header" href="#walters-wild-ride">Walters wild ride</a></h1>
+<p>//todo find walters talking about dmd not dealllocating</p>
+<p>//todo find quote of probaly snar complaining that dmd live edits ast</p>
+<p>Given that the compiler doesnt deallocate and it live edits some bugs are natural imparitive <em>features</em></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="useful-bugsugliness"><a class="header" href="#useful-bugsugliness">Useful Bugs/ugliness</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="monkyyy-header"><a class="header" href="#monkyyy-header">Monkyyy header</a></h1>
+<p><code>(T,T data)</code> doesnt correctly reset</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tgs-counter"><a class="header" href="#tgs-counter">tg's counter</a></h1>
+<pre><code class="language-d">enum counter=cast(immutable(void)*)[0].ptr;
+auto getcount()=&gt;(*(cast(int*)counter));
+auto count()=&gt;(*(cast(int*)counter))++;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="unintentional-features"><a class="header" href="#unintentional-features">unintentional Features</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mixin-counter"><a class="header" href="#mixin-counter">Mixin counter</a></h1>
+<p>My old compile time counter, its worse</p>
+<p><code>mixin("__LINE__")</code> with a <code>-mixin=mix</code> flag</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
