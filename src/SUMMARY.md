@@ -4,6 +4,7 @@
 - [Thoery](./Theme.md)
     - [whats a template anyway](whatsatemplate.md)
     - [Bad turing-completeness](turingcomplete.md)
+    - [Safetyphilia]()
 # Syntax
 - [New-ish features](features.md)
     - [Alias reassignment](aliasreassign.md)
