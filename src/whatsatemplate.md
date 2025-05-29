@@ -14,6 +14,18 @@ You dont need to have betty crooker and her yellow number 7, her alumium powder,
 
 `template stirfry(alias Meat, Vegibles...)` and `stirfry!(pork,leek)`; you replace specail tokens to generate your recipe on the fly. Which is fine because `pork` and `beef` are culiarily very simuliar, handling the list of vegibles may take some getting used to, to say nothing of how to express "seasoning". But all of that is possible.
 
+
+
 //todo consider extending examples for vegiables and seasoning
 
-However take note, `a meat of your choosing` is *wildly* underspefified; stir fry of crocodile is techically a phase that has syntactic meaning but ancient china probaly did not define the seasoning profile for a flordian delecy. You have two chioces, either a) Refuse to work for all choices or b) let it play out and let the user beware. Unlike a cookbook, an api can be opinated and controlling, I think this is a mistake, the goal should be to attempt to compile everything. Let the user have thier food. **It will be less work and have more product.**
+However take note, `a meat of your choosing` is *wildly* underspecified; stir fry of crocodile is technically a phase that has syntactic meaning but ancient china probably did not define the seasoning profile for a Floridian delicacy. You have two choices, either a) Refuse to work for all choices or b) let it play out and let the user beware. Unlike a cookbook, an api can be opinionated and controlling, I think this is a mistake, the goal should be to attempt to compile everything. Let the user have their food. **It will be less work and have more product.**
+
+
+
+
+
+
+
+
+
+
