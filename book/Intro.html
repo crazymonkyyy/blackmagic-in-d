@@ -41,6 +41,17 @@
         <script src="toc.js"></script>
     </head>
     <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
     <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
@@ -118,7 +129,7 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -157,9 +168,11 @@
                     <main>
                         <h1 id="not-even-first-draft"><a class="header" href="#not-even-first-draft">NOT EVEN FIRST DRAFT</a></h1>
 <h3 id="about-this-book"><a class="header" href="#about-this-book">About this book</a></h3>
-<p>If this is your first book about dlang; <strong>don't</strong>. This is a collection of rants about template meta-programming. Go read something else first: //todo list</p>
-<p>Read this along side or after the template book even if its old as shit //todo link
-Making this at the earilest the 3rd book you read.</p>
+<p>If this is your first book about dlang; <strong>don't</strong>. This is a collection of rants about template meta-programming. Go read something else first: //todo expand list</p>
+<p><a href="https://github.com/crazymonkyyy/dingbats">Dingbats</a></p>
+<p><a href="https://ddili.org/ders/d.en/index.html">Programming is D(a bit overhyped but standard)</a></p>
+<p>Read this along side or after <a href="https://github.com/PhilippeSigaud/D-templates-tutorial">the template book</a>; this book should be mandated reading for navigating template hell.</p>
+<p>Making this at the earilest the 3rd book you read.</p>
 <h3 id="contributing"><a class="header" href="#contributing">Contributing</a></h3>
 <p>Im very open to grammer and spelling edits, not so with tone and opinion policing.
 Geust chapters plz.</p>

@@ -41,6 +41,17 @@
         <script src="toc.js"></script>
     </head>
     <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
     <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
@@ -118,7 +129,7 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -157,14 +168,15 @@
                     <main>
                         <h1 id="whats-a-template-anyway"><a class="header" href="#whats-a-template-anyway">whats a template anyway</a></h1>
 <p>//todo make allot more verbose and clear, and get beta readers who dont understand templates</p>
-<p>In cooking theres a difference between a techique and a recipe. A "betty crocker yellow cake americain edition" reads differently from a a describtion of "stirfry". Likewise Stepanov ranting about math is different from plain old c.</p>
+<p>In cooking theres a difference between a techique and a recipe. A <code>Betty Crocker yellow cake (americain edition)</code> reads differently from a description of a <code>stirfry</code>. Likewise Stepanov ranting about math is different from plain old c.</p>
 <p>https://youtu.be/KbC4jvGPFs0?si=8OdMfCIJAMAnUAKI&amp;t=155 //todo look up video embeding //todo consider making my own cut/upload</p>
 <p>//todo summerize with d code translations</p>
 <p>Where c is very close to thin layer over a finished program and is therefore like repeating a packaged cake recipe, templates are where Stepanov can put his ideas as a techique.</p>
 <p>You dont need to have betty crooker and her yellow number 7, her alumium powder, too hold your hand to stirfry pork and leeks; it will be fine, pinkie promise. Likewise functions like <code>swap</code> don't need to be complex things, they just need a little gap where a type can go. You dont need a "class that extends swapable" or some other dynamatic type thoery with strong opinions, you need a hole and a bit of text replacement. Where <code>T</code> can be a <code>int</code> or <code>float</code>, the <code>meat of your choice</code> could be <code>pork</code> or <code>beef</code>.</p>
 <p><code>template stirfry(alias Meat, Vegibles...)</code> and <code>stirfry!(pork,leek)</code>; you replace specail tokens to generate your recipe on the fly. Which is fine because <code>pork</code> and <code>beef</code> are culiarily very simuliar, handling the list of vegibles may take some getting used to, to say nothing of how to express "seasoning". But all of that is possible.</p>
-<p>//todo consider extending examples for vegiables and seasoning</p>
-<p>However take note, <code>a meat of your choosing</code> is <em>wildly</em> underspefified; stir fry of crocodile is techically a phase that has syntactic meaning but ancient china probaly did not define the seasoning profile for a flordian delecy. You have two chioces, either a) Refuse to work for all choices or b) let it play out and let the user beware. Unlike a cookbook, an api can be opinated and controlling, I think this is a mistake, the goal should be to attempt to compile everything. Let the user have thier food. <strong>It will be less work and have more product.</strong></p>
+<p>//todo consider extending examples for vegetables and seasoning</p>
+<p>However take note, <code>a meat of your choosing</code> is <em>wildly</em> underspecified; <code>stirfry of crocodile</code> is technically a phase that has syntactic meaning but ancient china probably did not define the seasoning profile for a Floridian delicacy. You have two choices, either a) Refuse to work for all choices or b) let it play out and let the user beware. Unlike a cookbook, an api can be opinionated and controlling, I think this is a mistake, the goal should be to attempt to compile everything. Let the user have their food.</p>
+<p><strong>It will be less work and have more product.</strong></p>
 
                     </main>
 

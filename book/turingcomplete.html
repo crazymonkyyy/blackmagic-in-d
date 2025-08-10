@@ -41,6 +41,17 @@
         <script src="toc.js"></script>
     </head>
     <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
     <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
@@ -118,7 +129,7 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -157,7 +168,10 @@
                     <main>
                         <h1 id="bad-turing-completeness"><a class="header" href="#bad-turing-completeness">Bad turing-completeness</a></h1>
 <p>//todo rant about how "reductions" in computer science are often "expansions", a round trip conversion from sat to minesweeper will be much much larger</p>
-<p>Templates are turing complete but the string replacement that is the "reduction" between chruch and turing is a shit computer</p>
+<p>In the fundmentals of computer science is the concept of a "reduction", a turing machine can simulate lamda calculous, lamda calculous can emulate addition, and lamda calculous can run a turing machine emulator.</p>
+<p>It should be noted this is a terrible name; a "reduction" is a drastic expansion to compute. It important for non-constructive math if a machine exists that you cant prove halts, its less so for you throwing together a 10 line script.</p>
+<p>Lisp doesnt do chruch numerals, they use op code; so even that crowd has limits to the level of impractically they will tolerate. I believe a chruch numeral muliplication is O(nm^2) to actaully compute, while if you squint and ignore the most autist of programmers, muliplcation of ints is const of just a few cycles.</p>
+<p>Templates for a genertic programmer can do anything, because it has enough chruch-ness to impliment the text replacement turing compleness thoery. <strong>BUT</strong> thats a truely awful method of computation. I believe D is far in the lead for simplifying and actaully compiling templates. <em>Template metaprogramming is a chruch machine that generates turing machines</em>. Even the safetyphiles will praise <code>alias reassignment</code> for being a massive speed up, its insanity it took so long it seems to me to be something like not requiring chruch numerals in lisp, before any list in template land would be of O(n^2) complexity before you even started. <strong>This book will cover imparitive template computation</strong>, these are bugs, but remember, how a chruch machine emulates a turing machine.</p>
 <p><strong>syntax sugar has semantic meaning</strong></p>
 
                     </main>

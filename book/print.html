@@ -42,6 +42,17 @@
         <script src="toc.js"></script>
     </head>
     <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
     <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
@@ -119,7 +130,7 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -158,9 +169,11 @@
                     <main>
                         <h1 id="not-even-first-draft"><a class="header" href="#not-even-first-draft">NOT EVEN FIRST DRAFT</a></h1>
 <h3 id="about-this-book"><a class="header" href="#about-this-book">About this book</a></h3>
-<p>If this is your first book about dlang; <strong>don't</strong>. This is a collection of rants about template meta-programming. Go read something else first: //todo list</p>
-<p>Read this along side or after the template book even if its old as shit //todo link
-Making this at the earilest the 3rd book you read.</p>
+<p>If this is your first book about dlang; <strong>don't</strong>. This is a collection of rants about template meta-programming. Go read something else first: //todo expand list</p>
+<p><a href="https://github.com/crazymonkyyy/dingbats">Dingbats</a></p>
+<p><a href="https://ddili.org/ders/d.en/index.html">Programming is D(a bit overhyped but standard)</a></p>
+<p>Read this along side or after <a href="https://github.com/PhilippeSigaud/D-templates-tutorial">the template book</a>; this book should be mandated reading for navigating template hell.</p>
+<p>Making this at the earilest the 3rd book you read.</p>
 <h3 id="contributing"><a class="header" href="#contributing">Contributing</a></h3>
 <p>Im very open to grammer and spelling edits, not so with tone and opinion policing.
 Geust chapters plz.</p>
@@ -171,19 +184,24 @@ Geust chapters plz.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="thoery"><a class="header" href="#thoery">Thoery</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="whats-a-template-anyway"><a class="header" href="#whats-a-template-anyway">whats a template anyway</a></h1>
 <p>//todo make allot more verbose and clear, and get beta readers who dont understand templates</p>
-<p>In cooking theres a difference between a techique and a recipe. A "betty crocker yellow cake americain edition" reads differently from a a describtion of "stirfry". Likewise Stepanov ranting about math is different from plain old c.</p>
+<p>In cooking theres a difference between a techique and a recipe. A <code>Betty Crocker yellow cake (americain edition)</code> reads differently from a description of a <code>stirfry</code>. Likewise Stepanov ranting about math is different from plain old c.</p>
 <p>https://youtu.be/KbC4jvGPFs0?si=8OdMfCIJAMAnUAKI&amp;t=155 //todo look up video embeding //todo consider making my own cut/upload</p>
 <p>//todo summerize with d code translations</p>
 <p>Where c is very close to thin layer over a finished program and is therefore like repeating a packaged cake recipe, templates are where Stepanov can put his ideas as a techique.</p>
 <p>You dont need to have betty crooker and her yellow number 7, her alumium powder, too hold your hand to stirfry pork and leeks; it will be fine, pinkie promise. Likewise functions like <code>swap</code> don't need to be complex things, they just need a little gap where a type can go. You dont need a "class that extends swapable" or some other dynamatic type thoery with strong opinions, you need a hole and a bit of text replacement. Where <code>T</code> can be a <code>int</code> or <code>float</code>, the <code>meat of your choice</code> could be <code>pork</code> or <code>beef</code>.</p>
 <p><code>template stirfry(alias Meat, Vegibles...)</code> and <code>stirfry!(pork,leek)</code>; you replace specail tokens to generate your recipe on the fly. Which is fine because <code>pork</code> and <code>beef</code> are culiarily very simuliar, handling the list of vegibles may take some getting used to, to say nothing of how to express "seasoning". But all of that is possible.</p>
-<p>//todo consider extending examples for vegiables and seasoning</p>
-<p>However take note, <code>a meat of your choosing</code> is <em>wildly</em> underspefified; stir fry of crocodile is techically a phase that has syntactic meaning but ancient china probaly did not define the seasoning profile for a flordian delecy. You have two chioces, either a) Refuse to work for all choices or b) let it play out and let the user beware. Unlike a cookbook, an api can be opinated and controlling, I think this is a mistake, the goal should be to attempt to compile everything. Let the user have thier food. <strong>It will be less work and have more product.</strong></p>
+<p>//todo consider extending examples for vegetables and seasoning</p>
+<p>However take note, <code>a meat of your choosing</code> is <em>wildly</em> underspecified; <code>stirfry of crocodile</code> is technically a phase that has syntactic meaning but ancient china probably did not define the seasoning profile for a Floridian delicacy. You have two choices, either a) Refuse to work for all choices or b) let it play out and let the user beware. Unlike a cookbook, an api can be opinionated and controlling, I think this is a mistake, the goal should be to attempt to compile everything. Let the user have their food.</p>
+<p><strong>It will be less work and have more product.</strong></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bad-turing-completeness"><a class="header" href="#bad-turing-completeness">Bad turing-completeness</a></h1>
 <p>//todo rant about how "reductions" in computer science are often "expansions", a round trip conversion from sat to minesweeper will be much much larger</p>
-<p>Templates are turing complete but the string replacement that is the "reduction" between chruch and turing is a shit computer</p>
+<p>In the fundmentals of computer science is the concept of a "reduction", a turing machine can simulate lamda calculous, lamda calculous can emulate addition, and lamda calculous can run a turing machine emulator.</p>
+<p>It should be noted this is a terrible name; a "reduction" is a drastic expansion to compute. It important for non-constructive math if a machine exists that you cant prove halts, its less so for you throwing together a 10 line script.</p>
+<p>Lisp doesnt do chruch numerals, they use op code; so even that crowd has limits to the level of impractically they will tolerate. I believe a chruch numeral muliplication is O(nm^2) to actaully compute, while if you squint and ignore the most autist of programmers, muliplcation of ints is const of just a few cycles.</p>
+<p>Templates for a genertic programmer can do anything, because it has enough chruch-ness to impliment the text replacement turing compleness thoery. <strong>BUT</strong> thats a truely awful method of computation. I believe D is far in the lead for simplifying and actaully compiling templates. <em>Template metaprogramming is a chruch machine that generates turing machines</em>. Even the safetyphiles will praise <code>alias reassignment</code> for being a massive speed up, its insanity it took so long it seems to me to be something like not requiring chruch numerals in lisp, before any list in template land would be of O(n^2) complexity before you even started. <strong>This book will cover imparitive template computation</strong>, these are bugs, but remember, how a chruch machine emulates a turing machine.</p>
 <p><strong>syntax sugar has semantic meaning</strong></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="new-ish-features"><a class="header" href="#new-ish-features">New-ish features</a></h1>
+<p>The template book is older then 10 years old; while D devolpment was slow, there was some progress. This section should serve as a extention to that book.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="alias-reassignment"><a class="header" href="#alias-reassignment">Alias reassignment</a></h1>
 <p>//todo since this was added after the template book, some coverage somewhere is nessery</p>
 <p>//todo enum reassignment pattern</p>
@@ -191,6 +209,154 @@ Geust chapters plz.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="opend-string-imports"><a class="header" href="#opend-string-imports">openD string imports</a></h1>
 <p>//some example code idk</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="other-patterns"><a class="header" href="#other-patterns">Other patterns</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="what-are-overload-sets"><a class="header" href="#what-are-overload-sets">What are Overload Sets</a></h1>
+<pre><code class="language-d">--- a.d
+import std;
+void fizz(bool){"bool".writeln;}
+--- app.d
+import std;
+void bar(int){"int".writeln;}
+void bar(float){"float".writeln;}
+alias foo=bar;
+import a;
+alias foo=fizz;
+void foobar(alias A)(){
+	A(1);
+	A(13.37);
+	A(true);
+}
+unittest{
+	foobar!foo;// prints "int","float" and "bool"
+}
+</code></pre>
+<p>What <strong>is</strong> <code>foo</code>, or for that matter <code>foobar.A</code>? Why does this work?</p>
+<p>Its an overload set. (as are <strong>ALL</strong> symbols in D, just lets not worry about it)</p>
+<p>Poeple who imagine a compiler being a stateless trasformation have little to say on the subject, theres a 4 paragraphs in the spec, the template book doesnt contain the phase.</p>
+<p>But the compiler isnt a stateless abstraction (as implied by the spec) and as your tool, sharpen it. The compiler <strong>must</strong> compute something, whats a reasonable mental model for its behavoir?</p>
+<p>Maybe <code>alias</code>'s are some sensable abstractions? :)</p>
+<p>No, alias's dont even exist. :D</p>
+<pre><code class="language-d">alias foo=int;
+unittest{
+	pragma(msg,__traits(identifier,foo));//Error: argument `int` has no identifier
+}
+</code></pre>
+<p>Maybe alias's are no-op's that merely redirect as they say in the spec?</p>
+<p>No, its modifies state. ^q^</p>
+<pre><code class="language-d">void landmine()(){static assert(0);}
+pragma(msg,"nothing exploded yet");
+alias step=landmine!();//BOOM
+</code></pre>
+<p>My current best geuss is that the famous <code>ast</code> is an overload set tree and aliases. And alias is a <em>stateful</em> operation that adds to a todo list of initualizations, while returning an overload set "pointer". The walterism compiler seems to scan the tree chasing <code>initualizations</code> i.e. <code>!()</code> of a template, building up a tree compile time.</p>
+<p>(and also selective imports, if you dont know, look into the topic when you get a dual context error)</p>
+<p>//todo probaly could have code here showing some parts of this take</p>
+<p>So, what is <code>foo</code>? Well adding:</p>
+<pre><code class="language-d">foreach(A;__traits(getOverloads,mixin(__MODULE__),"foo",true)){
+	__traits(fullyQualifiedName,A).writeln;
+}
+</code></pre>
+<p>prints</p>
+<pre><code>bar
+app.bar
+a.fizz
+</code></pre>
+<p>Well thats <em>an</em> answer.</p>
+<p>Do I understand the difference between <code>bar</code> and <code>app.bar</code>? No. I expect its buggy as hell when I play with it. The n'th <code>bar</code> seems to be the (n-1)'th function parsed, maybe, who knows; maybe the first bar has claim of a list of header its combined with. These airnt good dependable traits but I dont know of better options for more stable infomation.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="explict-overload-sets"><a class="header" href="#explict-overload-sets">Explict Overload Sets</a></h1>
+<p>With (hopefully) an understanding of how overload sets one of the most fundmental concepts in the compiler. What do I suggest you do with it?</p>
+<p>Specailization, lots and lots of specailization.</p>
+<pre><code class="language-d">int foo(T:int)()=&gt;1;
+int foo(T:float)()=&gt;2;
+static assert(foo!float==2);
+</code></pre>
+<p>Foo when initualized can look up a value here. But remember last chapter, foo can be passed around and <em>everything</em> is an overload set; these could easily be types, functions, <em>or other templates</em>.</p>
+<p>But most realisticly, an hacky "ct type array":</p>
+<pre><code class="language-d">alias foo(int I:0)=int;
+alias foo(int I:1)=float;
+static foreach(I;0..2){
+	pragma(msg,foo!I.stringof);
+}
+</code></pre>
+<hr />
+<p>Ive had an argument with kap resently(basicly nearly a fist fight &gt;:( ) about the radical importance of templates, the anti-template extermist claimed "(T) &gt; (int N,T)" if you can believe it. (I couldnt I was shocked by the ignorence)</p>
+<p>He pointed at his own code: https://github.com/Kapendev/joka/blob/main/source/joka/math.d</p>
+<pre><code class="language-d">alias BVec2 = GVec2!byte;   /// A 2D vector using bytes.
+alias IVec2 = GVec2!int;    /// A 2D vector using ints.
+alias UVec2 = GVec2!uint;   /// A 2D vector using uints.
+alias Vec2 = GVec2!float;   /// A 2D vector using floats.
+alias DVec2 = GVec2!double; /// A 2D vector using doubles.
+
+alias BVec3 = GVec3!byte;   /// A 3D vector using bytes.
+...
+
+alias BVec4 = GVec4!byte;   /// A 4D vector using bytes.
+...
+
+/// A generic 2D vector.
+struct GVec2(T) {
+	T x = 0; /// The X component of the vector.
+	T y = 0; /// The Y component of the vector.
+	...
+
+/// A generic 3D vector.
+struct GVec3(T) {
+	T x = 0; /// The X component of the vector.
+	T y = 0; /// The Y component of the vector.
+	T z = 0; /// The Z component of the vector.
+	...
+...
+</code></pre>
+<p>I tried, in vain, to explain that he should just define all three reasonable ways to access the types.... but I disgess.</p>
+<p>He seemed to think it was nessery to define a super vec template in some awful hellscape of meta programming and 500 lines of hard to untangle code. This isnt true. You need to define a single <code>overload set</code> but it is not nessery to make that a single template.</p>
+<p>Consider this rewrite of the headers:</p>
+<pre><code class="language-d">/// A generic 2D vector.
+alias GVec2(T=float)=GVec!(2,T);
+struct GVec(int N:2,T) {
+	T x = 0; /// The X component of the vector.
+	T y = 0; /// The Y component of the vector.
+}
+/// A generic 3D vector.
+alias GVec3(T=float)=GVec!(3,T);
+struct GVec(int N:3,T) {
+	T x = 0; /// The X component of the vector.
+	T y = 0; /// The Y component of the vector.
+	T z = 0; /// The Z component of the vector.
+}
+alias GVec4(T=float)=GVec!(4,T);
+struct GVec(int N:4,T) {
+	T x = 0; /// The X component of the vector.
+	T y = 0; /// The Y component of the vector.
+	T z = 0; /// The Z component of the vector.
+	T w = 0; /// The W component of the vector.
+}
+</code></pre>
+<p>Suddenly <code>GVec</code> is one overload set and (in thoery) doesnt change any of his other code.</p>
+<p>This will allow users to define meta programming over the vec's:</p>
+<pre><code class="language-d">void print(int N,T)(GVec!(N,T) bar){
+	import std;
+	writeln("this is a vector of ",N," ",T.stringof);
+	static foreach(C;"xyzw"[0..N]){
+		writeln(C,":",mixin("bar."~C));
+}}
+unittest{
+	IVec3(1,4,7).print;
+	DVec4(2,6,0,0).print;
+}
+</code></pre>
+<pre><code>this is a vector of 3 int
+x:1
+y:4
+z:7
+this is a vector of 4 double
+x:2
+y:6
+z:0
+w:0
+</code></pre>
+<p>and we could keep going :D</p>
+<p><a href="overloadgist.d">code</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="overdoing-overload-sets"><a class="header" href="#overdoing-overload-sets">Overdoing Overload Sets</a></h1>
+<p>This is not about good code anymore this is about pushing the compiler</p>
+<p>//todo takes kaps types and make a sumtype</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="specailization-as-lookup-tables"><a class="header" href="#specailization-as-lookup-tables">Specailization as lookup tables</a></h1>
 <pre><code class="language-d">int foo(T:int)()=&gt;1;
 int foo(T:float)()=&gt;2;
@@ -207,6 +373,8 @@ int foo(T:float)()=&gt;2;
 auto getcount()=&gt;(*(cast(int*)counter));
 auto count()=&gt;(*(cast(int*)counter))++;
 </code></pre>
+<p>//todo explain, lots of code</p>
+<p><a href="appendable.d">some code</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="unintentional-features"><a class="header" href="#unintentional-features">unintentional Features</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="mixin-counter"><a class="header" href="#mixin-counter">Mixin counter</a></h1>
 <p>My old compile time counter, its worse</p>

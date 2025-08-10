@@ -18,7 +18,9 @@ You dont need to have betty crooker and her yellow number 7, her alumium powder,
 
 //todo consider extending examples for vegetables and seasoning
 
-However take note, `a meat of your choosing` is *wildly* underspecified; `stirfry of crocodile` is technically a phase that has syntactic meaning but ancient china probably did not define the seasoning profile for a Floridian delicacy. You have two choices, either a) Refuse to work for all choices or b) let it play out and let the user beware. Unlike a cookbook, an api can be opinionated and controlling, I think this is a mistake, the goal should be to attempt to compile everything. Let the user have their food. **It will be less work and have more product.**
+However take note, `a meat of your choosing` is *wildly* underspecified; `stirfry of crocodile` is technically a phase that has syntactic meaning but ancient china probably did not define the seasoning profile for a Floridian delicacy. You have two choices, either a) Refuse to work for all choices or b) let it play out and let the user beware. Unlike a cookbook, an api can be opinionated and controlling, I think this is a mistake, the goal should be to attempt to compile everything. Let the user have their food. 
+
+**It will be less work and have more product.**
 
 
 

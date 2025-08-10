@@ -2,9 +2,14 @@
 
 ### About this book
 
-If this is your first book about dlang; **don't**. This is a collection of rants about template meta-programming. Go read something else first: //todo list
+If this is your first book about dlang; **don't**. This is a collection of rants about template meta-programming. Go read something else first: //todo expand list
 
-Read this along side or after the template book even if its old as shit //todo link
+[Dingbats](https://github.com/crazymonkyyy/dingbats)
+
+[Programming is D(a bit overhyped but standard)](https://ddili.org/ders/d.en/index.html)
+
+Read this along side or after [the template book](https://github.com/PhilippeSigaud/D-templates-tutorial); this book should be mandated reading for navigating template hell.
+
 Making this at the earilest the 3rd book you read.
 
 ### Contributing
